@@ -165,7 +165,6 @@ const App = () => {
                     </div>
                     <div className={display.vehicle}>
                       <div className="col-12">
-                        lll
                         <h3>Vehicle Description</h3>
                         <i className="fa fa-car fa-2x"></i>
                       </div>
