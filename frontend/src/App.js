@@ -7,8 +7,8 @@ const App = () => {
   const [makes, setMakes] = useState([]);
   const [models, setModels] = useState([]);
   const [vehicles, setVehicles] = useState([]);
-  const [model, setModel] = useState("id", "model", "value", "#");
-  const [vehicle, setVehicle] = useState("id", "vehicle", "value", "#");
+  const [model, setModel] = useState({ "id": "model", "value": "#" });
+  const [vehicle, setVehicle] = useState({ "id": "vehicle", "value": "#" });
   const [display, setDisplay] = useState({ "spinner": "display-none", "models": "display-none", "vehicle": "display-none" });
   const [emptyDisplay, setEmptyDisplay] = useState("display-none")
 
