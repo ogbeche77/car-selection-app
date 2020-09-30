@@ -4,8 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-src/css
-src/fontawesome
+
 
 # testing
 /coverage
@@ -25,7 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 
-config/default.json
+
 package-lock.json
-frontend/package-lock.json
+
 
