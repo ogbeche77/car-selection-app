@@ -104,7 +104,7 @@ const App = () => {
 
     return <div className="col-12 col-sm-12 col-md-6 col-lg-4 mt-3">
       <div className="card">
-        <div className="card-body">
+        <div className="card-body" data-testid="vehicle-body" data-testid="vehicle-fuel" data-testid="vehicle-capacity" data-testid="vehicle-engine">
           <p><b>bodyType</b> - {vehicle.bodyType}</p>
           <p><b>fuelType</b> - {vehicle.fuelType}</p>
           <p><b>engineCapacity</b> - {vehicle.engineCapacity}</p>
@@ -132,7 +132,7 @@ const App = () => {
                     <form>
                       <div className="row">
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-                          <div className="form-group">
+                          <div className="form-group" data-testid="vehicle-model">
                             <label>Car Makes</label>
                             <select className="form-control" onChange={(event) => fetchModelHandler(event, model.id)}>
                               <option value="#">Select a car</option>
@@ -143,7 +143,7 @@ const App = () => {
                       </div>
                       <div className={display.models}>
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-                          <div className="form-group">
+                          <div className="form-group" data-testid="vehicle-model">
                             <label>Models</label>
                             <select className="form-control" onChange={(event) => fetchVehicleHandler(event, vehicle.id)}>
                               <option value="#">Select a car</option>
@@ -165,7 +165,7 @@ const App = () => {
                     </div>
                     <div className={display.vehicle}>
                       <div className="col-12">
-
+                        lll
                         <h3>Vehicle Description</h3>
                         <i className="fa fa-car fa-2x"></i>
                       </div>

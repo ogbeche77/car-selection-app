@@ -9,3 +9,12 @@ it('renders without crashing', () => {
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
+
+test('should render App fields', () => {
+    const { getByTestId } = render(<App />);
+    expect(getByTestId('vehicle-model')).toBeInTheDocument();
+    expect(getByTestId('vehicle-body')).toBeInTheDocument();
+    expect(getByTestId('vehicle-fuel')).toBeInTheDocument();
+    expect(getByTestId('vehicle-capacity')).toBeInTheDocument();
+    expect(getByTestId('vehicle-engine')).toBeInTheDocument();
+});
