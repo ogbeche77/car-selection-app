@@ -94,6 +94,10 @@ function filterData(req, data, properties) {
   );
 }
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+}
+
 server.listen(port, function () {
   console.log("Server listening on: http://localhost:%s", port);
 });
