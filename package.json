@@ -1,0 +1,24 @@
+{
+  "name": "car-selection-app",
+  "version": "1.0.0",
+  "description": "> Car-Selection-App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && npm install",
+    "heroku-postbuild": "npm run install-frontend && npm run build",
+    "start": "cd apiserver && node server.js",
+    "frontend": "cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ogbeche77/car-selection-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ogbeche77/car-selection-app/issues"
+  },
+  "homepage": "https://github.com/ogbeche77/car-selection-app#readme"
+}
