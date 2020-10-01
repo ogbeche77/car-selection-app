@@ -7,16 +7,16 @@ const App = () => {
   const [makes, setMakes] = useState([]);
   const [models, setModels] = useState([]);
   const [vehicles, setVehicles] = useState([]);
-  const [model, setModel] = useState({ "id": "model", "value": "#" });
-  const [vehicle, setVehicle] = useState({ "id": "vehicle", "value": "#" });
-  const [display, setDisplay] = useState({ "spinner": "display-none", "models": "display-none", "vehicle": "display-none" });
+  const [model, setModel] = useState({ id: "model", value: "#" });
+  const [vehicle, setVehicle] = useState({ id: "vehicle", value: "#" });
+  const [display, setDisplay] = useState({ spinner: "display-none", models: "display-none", vehicle: "display-none" });
   const [emptyDisplay, setEmptyDisplay] = useState("display-none")
 
 
   const fetchVehicleHandler = (event) => {
     event.preventDefault();
     if (event.target.value === "#") {
-      setDisplay({ "spinner": "display-none", "models": "row", "vehicle": "display-none" })
+      setDisplay({ spinner: "display-none", models: "row", vehicle: "display-none" })
     } else {
       const url = `http://localhost:8080/api/vehicles?make=${model.value}&model=${event.target.value}`;
       console.log(url)
@@ -31,11 +31,11 @@ const App = () => {
         .then((response) => {
           if (response.length > 0) {
             setEmptyDisplay("display-none");
-            setDisplay({ "spinner": "display-none", "models": "row", "vehicle": "row" })
+            setDisplay({ spinner: "display-none", models: "row", vehicle: "row" })
             setVehicles(response);
           } else {
             setEmptyDisplay("row");
-            setDisplay({ "spinner": "display-none", "models": "row", "vehicle": "display-none" })
+            setDisplay({ spinner: "display-none", models: "row", vehicle: "display-none" })
           }
         })
     }
@@ -46,9 +46,9 @@ const App = () => {
   const fetchModelHandler = (event) => {
     event.preventDefault();
     if (event.target.value === "#") {
-      setDisplay({ "spinner": "display-none", "models": "display-none", "vehicle": "display-none" })
+      setDisplay({ spinner: "display-none", models: "display-none", vehicle: "display-none" })
     } else {
-      setDisplay({ "spinner": "", "models": "display-none", "vehicle": "display-none" })
+      setDisplay({ spinner: "display-none", models: "display-none", vehicle: "display-none" })
       const url = `http://localhost:8080/api/models?make=${event.target.value}`;
       setModel({ id: "model", value: event.target.value });
       fetch(url, {
@@ -61,10 +61,10 @@ const App = () => {
         .then((response) => {
           if (response.length > 0) {
             setEmptyDisplay("display-none");
-            setDisplay({ "spinner": "display-none", "models": "row", "vehicle": "display-none" })
+            setDisplay({ spinner: "display-none", models: "row", vehicle: "display-none" })
             setModels(response);
           } else {
-            setDisplay({ "spinner": "display-none", "models": "display-none", "vehicle": "display-none" })
+            setDisplay({ spinner: "display-none", models: "display-none", vehicle: "display-none" })
             setEmptyDisplay("row");
           }
 
@@ -104,7 +104,7 @@ const App = () => {
 
     return <div className="col-12 col-sm-12 col-md-6 col-lg-4 mt-3">
       <div className="card">
-        <div className="card-body" data-testid="vehicle-body" data-testid="vehicle-fuel" data-testid="vehicle-capacity" data-testid="vehicle-engine">
+        <div className="card-body" data-testid="vehicle-body" >
           <p><b>bodyType</b> - {vehicle.bodyType}</p>
           <p><b>fuelType</b> - {vehicle.fuelType}</p>
           <p><b>engineCapacity</b> - {vehicle.engineCapacity}</p>
