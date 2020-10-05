@@ -105,11 +105,11 @@ const App = () => {
     return <div className="col-12 col-sm-12 col-md-6 col-lg-4 mt-3">
       <div className="card">
         <div className="card-body"  >
-          <p><b>bodyType</b> - {vehicle.bodyType}</p>
-          <p><b>fuelType</b> - {vehicle.fuelType}</p>
-          <p><b>engineCapacity</b> - {vehicle.engineCapacity}</p>
-          <p><b>enginePowerKW</b> - {vehicle.enginePowerKW}</p>
-          <p><b>enginePowerPS</b> - {vehicle.enginePowerPS}</p>
+          <p><b>Body Type</b> - {vehicle.bodyType}</p>
+          <p><b>Fuel Type</b> - {vehicle.fuelType}</p>
+          <p><b>Engine Capacity</b> - {vehicle.engineCapacity}</p>
+          <p><b>Engine PowerKW</b> - {vehicle.enginePowerKW}</p>
+          <p><b>Engine PowerPS</b> - {vehicle.enginePowerPS}</p>
         </div>
       </div>
     </div>
