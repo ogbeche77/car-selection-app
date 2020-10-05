@@ -1,8 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from "@testing-library/react";
+
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+
+
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
+
+describe("Friday Testing", () => {
+  test("render title", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find("h1").text()).toContain("Select your favourite car make")
+
+    // const { getByText } = render(<App />);
+    // const linkElement = getByText("Select your favourite car make");
+    // expect(linkElement).toBeInTheDocument();
+  });
 });
