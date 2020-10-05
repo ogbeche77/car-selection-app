@@ -104,7 +104,7 @@ const App = () => {
 
     return <div className="col-12 col-sm-12 col-md-6 col-lg-4 mt-3">
       <div className="card">
-        <div className="card-body" data-testid="vehicle-body" >
+        <div className="card-body"  >
           <p><b>bodyType</b> - {vehicle.bodyType}</p>
           <p><b>fuelType</b> - {vehicle.fuelType}</p>
           <p><b>engineCapacity</b> - {vehicle.engineCapacity}</p>
@@ -120,55 +120,57 @@ const App = () => {
   })
 
   return (
-    <div className="container-fluid bg-blue min-height">
-      <div className="row">
-        <div className="col-12 offset-0 col-sm-8 offset-sm-2 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
-          <div className="card  bg-blue border-light mt-5">
-            <div className="card-body">
-              <div className="col-12 col-sm-12 col-md-12 col-lg-12 mt-5 mb-5">
-                <div className="card">
-                  <div className="card-body">
-                    <h1>Select your favourite car make</h1>
-                    <form>
-                      <div className="row">
-                        <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-                          <div className="form-group" data-testid="vehicle-model">
-                            <label>Car Makes</label>
-                            <select className="form-control" onChange={(event) => fetchModelHandler(event, model.id)}>
-                              <option value="#">Select a car</option>
-                              {makeOption}
-                            </select>
+    <div className="App">
+      <div className="container-fluid bg-blue min-height">
+        <div className="row">
+          <div className="col-12 offset-0 col-sm-8 offset-sm-2 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
+            <div className="card  bg-blue border-light mt-5">
+              <div className="card-body">
+                <div className="col-12 col-sm-12 col-md-12 col-lg-12 mt-5 mb-5">
+                  <div className="card">
+                    <div className="card-body">
+                      <h1>Select your favourite car make</h1>
+                      <form>
+                        <div className="row">
+                          <div className="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div className="form-group" >
+                              <label>Car Makes</label>
+                              <select className="form-control" onChange={(event) => fetchModelHandler(event, model.id)}>
+                                <option value="#">Select a car</option>
+                                {makeOption}
+                              </select>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className={display.models}>
-                        <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-                          <div className="form-group" data-testid="vehicle-model">
-                            <label>Models</label>
-                            <select className="form-control" onChange={(event) => fetchVehicleHandler(event, vehicle.id)}>
-                              <option value="#">Select a car</option>
-                              {modelOption}
-                            </select>
+                        <div className={display.models}>
+                          <div className="col-12 col-sm-12 col-md-12 col-lg-12">
+                            <div className="form-group" >
+                              <label>Models</label>
+                              <select className="form-control" onChange={(event) => fetchVehicleHandler(event, vehicle.id)}>
+                                <option value="#">Select a car</option>
+                                {modelOption}
+                              </select>
+                            </div>
                           </div>
                         </div>
+                      </form>
+                      <div className={emptyDisplay}>
+                        <img className="offset-4 offset-sm-0" src={empty} width="50%" alt="online payment transfer" />
+                        <div className="col-12 col-md-6 mt-5">
+                          <h1 className="">No Models found for this car make</h1>
+                          <small className="offset-0 offset-md-4">PLEASE SELECT ANOTHER CAR MAKE</small>
+                        </div>
                       </div>
-                    </form>
-                    <div className={emptyDisplay}>
-                      <img className="offset-4 offset-sm-0" src={empty} width="50%" alt="online payment transfer" />
-                      <div className="col-12 col-md-6 mt-5">
-                        <h1 className="">No Models found for this car make</h1>
-                        <small className="offset-0 offset-md-4">PLEASE SELECT ANOTHER CAR MAKE</small>
+                      <div className={display.spinner}>
+                        <i className='fa fa-spinner fa-spin fa-3x text-dark offset-6'></i>
                       </div>
-                    </div>
-                    <div className={display.spinner}>
-                      <i className='fa fa-spinner fa-spin fa-3x text-dark offset-6'></i>
-                    </div>
-                    <div className={display.vehicle}>
-                      <div className="col-12">
-                        <h3>Vehicle Description</h3>
-                        <i className="fa fa-car fa-2x"></i>
+                      <div className={display.vehicle}>
+                        <div className="col-12">
+                          <h3>Vehicle Description</h3>
+                          <i className="fa fa-car fa-2x"></i>
+                        </div>
+                        {vehiclesCard}
                       </div>
-                      {vehiclesCard}
                     </div>
                   </div>
                 </div>
