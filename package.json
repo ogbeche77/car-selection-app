@@ -1,18 +1,15 @@
 {
-  "homepage": "http://ogbeche77.github.io/car-selection-app",
   "name": "car-selection-app",
   "version": "1.0.0",
   "description": "> Car-Selection-App",
   "main": "index.js",
   "scripts": {
-    "predeploy": "cd frontend && npm run build",
-    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd frontend && npm run build",
-    "install-frontend": "cd frontend && npm install",
+    "build": "npm run build --prefix frontend",
+    "install-frontend": "npm install --prefix frontend",
     "heroku-postbuild": "npm run install-frontend && npm run build",
-    "frontend": "cd frontend && npm start",
-    "start": "cd apiserver && node server.js"
+    "start": "cd apiserver && node server.js",
+    "frontend": "npm start --prefix frontend"
   },
   "repository": {
     "type": "git",
