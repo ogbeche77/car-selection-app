@@ -12,8 +12,7 @@
 ## General info
 
 Car-Selection-App allows users to select their car from a directory of registered cars. The data is provided by the api server in this repo.
-The api provides a list of available makes, models of each car make and their features like engine capacity,
-engine power, fuel type and body type.
+The api provides a list of available makes, models of each car make and their features like engine capacity,engine power, fuel type and body type.
 
 ## Technologies
 
